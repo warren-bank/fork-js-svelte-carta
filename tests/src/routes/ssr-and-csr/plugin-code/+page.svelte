@@ -13,4 +13,8 @@
   let value = "```js\nconsole.log('Hello, World!');\n```"
 </script>
 
+<svelte:head>
+  <title>Test: plugin-code</title>
+</svelte:head>
+
 <MarkdownEditor mode="split" bind:value {carta} />

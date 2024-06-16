@@ -1,14 +1,31 @@
-<h3>SSR (Server-Side Rendering) only</h3>
-<ul>
-  <li><a target="_blank" href="/ssr-only/plugin-code">plugin-code</a></li>
-</ul>
+<script context="module">
+  const title = 'Tests'
 
-<h3>CSR (Client-Side Rendering) only</h3>
-<ul>
-  <li><a target="_blank" href="/csr-only/plugin-code">plugin-code</a></li>
-</ul>
+  const top_level_dirs = [
+    {
+      name: 'SSR (Server-Side Rendering) only',
+      path: 'ssr-only'
+    },
+    {
+      name: 'CSR (Client-Side Rendering) only',
+      path: 'csr-only'
+    },
+    {
+      name: 'SSR and CSR',
+      path: 'ssr-and-csr'
+    },
+  ]
+</script>
 
-<h3>SSR and CSR</h3>
-<ul>
-  <li><a target="_blank" href="/ssr-and-csr/plugin-code">plugin-code</a></li>
-</ul>
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
+
+<h2><u>{title}</u></h2>
+
+{#each top_level_dirs as tld (tld.path)}
+  <h3>{tld.name}</h3>
+  <ul>
+    <li><a target="_blank" href={`/${tld.path}/plugin-code`}>plugin-code</a></li>
+  </ul>
+{/each}
