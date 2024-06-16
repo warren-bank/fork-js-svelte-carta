@@ -1,0 +1,28 @@
+{
+	"name": "tests",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@cartamd/plugin-attachment": "../packages/plugin-attachment",
+		"@cartamd/plugin-code":       "../packages/plugin-code",
+		"@cartamd/plugin-emoji":      "../packages/plugin-emoji",
+		"@cartamd/plugin-math":       "../packages/plugin-math",
+		"@cartamd/plugin-slash":      "../packages/plugin-slash",
+		"@cartamd/plugin-tikz":       "../packages/plugin-tikz",
+		"carta-md":                   "../packages/carta-md"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.2.2",
+		"@sveltejs/kit": "^2.5.10",
+		"@sveltejs/vite-plugin-svelte": "^3.1.1",
+		"svelte": "^4.2.17",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.12"
+	}
+}
