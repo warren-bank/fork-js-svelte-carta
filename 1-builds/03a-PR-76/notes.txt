@@ -1,0 +1,7 @@
+--------------------------------------------------------------------------------
+
+https://github.com/BearToCode/carta/pull/76
+https://github.com/warren-bank/fork-js-svelte-carta/tree/PR-003/v4.2.0/plugin-code
+https://github.com/warren-bank/fork-js-svelte-carta/archive/refs/heads/PR-003/v4.2.0/plugin-code.zip
+
+--------------------------------------------------------------------------------

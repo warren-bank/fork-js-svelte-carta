@@ -1,0 +1,13 @@
+{
+  "name": "@cartamd/plugin-emoji",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "bezier-easing": "^2.1.0",
+    "node-emoji": "^1.11.0",
+    "remark-gemoji": "^8.0.0"
+  },
+  "peerDependencies": {
+    "carta-md": "../carta-md"
+  }
+}

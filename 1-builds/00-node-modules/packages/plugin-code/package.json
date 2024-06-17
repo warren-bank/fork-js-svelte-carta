@@ -1,0 +1,14 @@
+{
+  "name": "@cartamd/plugin-code",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@shikijs/rehype": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3"
+  },
+  "peerDependencies": {
+    "carta-md": "../carta-md"
+  }
+}

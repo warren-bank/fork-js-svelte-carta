@@ -1,0 +1,47 @@
+{
+	"name": "@cartamd/plugin-math",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BearToCode/carta.git"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"carta-md": "workspace:*",
+		"typescript": "^5.0.4"
+	},
+	"peerDependencies": {
+		"carta-md": "^4.0.0"
+	},
+	"files": [
+		"dist"
+	],
+	"dependencies": {
+		"rehype-katex": "^7.0.0",
+		"remark-math": "^6.0.0"
+	},
+	"version": "4.0.1",
+	"keywords": [
+		"carta",
+		"markdown",
+		"editor",
+		"unified",
+		"remark",
+		"text editor",
+		"marked editor",
+		"slash",
+		"syntax highlighting",
+		"emoji",
+		"katex"
+	]
+}

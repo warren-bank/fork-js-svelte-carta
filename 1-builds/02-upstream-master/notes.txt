@@ -1,0 +1,14 @@
+--------------------------------------------------------------------------------
+
+https://github.com/BearToCode/carta/commits/master/
+https://github.com/BearToCode/carta/commit/744c9a2a0d84aa4830ef8d2ff28a900ec4c5ce2c
+https://github.com/BearToCode/carta/archive/744c9a2a0d84aa4830ef8d2ff28a900ec4c5ce2c.zip
+
+--------------------------------------------------------------------------------
+
+to replace pnpm workspace in "package.json" of plugins:
+
+search  = "workspace:*"
+replace = "../carta-md"
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,11 @@
+{
+  "name": "@cartamd/plugin-slash",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "bezier-easing": "^2.1.0"
+  },
+  "peerDependencies": {
+    "carta-md": "../carta-md"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@cartamd/plugin-math",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "peerDependencies": {
+    "carta-md": "../carta-md"
+  }
+}

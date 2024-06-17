@@ -1,0 +1,8 @@
+{
+  "name": "@cartamd/plugin-attachment",
+  "private": true,
+  "type": "module",
+  "peerDependencies": {
+    "carta-md": "../carta-md"
+  }
+}

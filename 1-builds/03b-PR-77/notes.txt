@@ -1,0 +1,16 @@
+--------------------------------------------------------------------------------
+
+https://github.com/BearToCode/carta/pull/77
+https://github.com/BearToCode/carta/tree/fix/concurrent-langs-highlight
+https://github.com/BearToCode/carta/archive/refs/heads/fix/concurrent-langs-highlight.zip
+
+--------------------------------------------------------------------------------
+
+./packages/plugin-code
+
+is a copy of:
+  ../02-upstream-master/packages/plugin-code
+at commit hash:
+  744c9a2a0d84aa4830ef8d2ff28a900ec4c5ce2c
+
+--------------------------------------------------------------------------------

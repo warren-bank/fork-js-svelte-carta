@@ -1,0 +1,20 @@
+{
+  "name": "@cartamd/plugin-tikz",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "hast-util-from-dom": "^5.0.0",
+    "node-tikzjax": "^1.0.3",
+    "rehype-parse": "^9.0.0",
+    "unist-util-visit": "^5.0.0",
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/md5": "^2.3.2",
+    "vite-plugin-dts": "^3.7.3",
+    "vite-raw-plugin": "^1.0.2"
+  },
+  "peerDependencies": {
+    "carta-md": "../carta-md"
+  }
+}
