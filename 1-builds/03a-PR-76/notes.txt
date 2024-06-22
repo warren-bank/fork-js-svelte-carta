@@ -2,6 +2,9 @@
 
 https://github.com/BearToCode/carta/pull/76
 https://github.com/warren-bank/fork-js-svelte-carta/tree/PR-003/v4.2.0/plugin-code
-https://github.com/warren-bank/fork-js-svelte-carta/archive/refs/heads/PR-003/v4.2.0/plugin-code.zip
+https://github.com/warren-bank/fork-js-svelte-carta/commits/PR-003/v4.2.0/plugin-code/
+
+https://github.com/warren-bank/fork-js-svelte-carta/tree/d1b1fc59a2cb396abe5c43c926655eba62eb0050
+https://github.com/warren-bank/fork-js-svelte-carta/archive/d1b1fc59a2cb396abe5c43c926655eba62eb0050.zip
 
 --------------------------------------------------------------------------------

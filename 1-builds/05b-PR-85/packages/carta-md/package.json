@@ -1,0 +1,72 @@
+{
+	"name": "carta-md",
+	"description": "A lightweight, fully customizable, Markdown editor",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BearToCode/carta.git"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"import": "./dist/index.js"
+		},
+		"./bundle/full": {
+			"types": "./dist/bundle/full.d.ts",
+			"import": "./dist/bundle/full.js"
+		},
+		"./bundle/web": {
+			"types": "./dist/bundle/web.d.ts",
+			"import": "./dist/bundle/web.js"
+		},
+		"./default.css": "./dist/default.css"
+	},
+	"version": "3.0.0",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "svelte-kit sync && svelte-package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/kit": "^2.5.4",
+		"@sveltejs/package": "^2.3.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
+		"svelte-check": "^3.6.7",
+		"tslib": "^2.4.1",
+		"typescript": "^5.1.6",
+		"vite": "^5.1.6"
+	},
+	"type": "module",
+	"dependencies": {
+		"rehype-stringify": "^10.0.0",
+		"remark-gfm": "^4.0.0",
+		"remark-parse": "^11.0.0",
+		"remark-rehype": "^11.1.0",
+		"shiki": "^1.7.0",
+		"unified": "^11.0.4"
+	},
+	"peerDependencies": {
+		"svelte": "^3.54.0 || ^4.0.0"
+	},
+	"keywords": [
+		"carta",
+		"markdown",
+		"editor",
+		"unified",
+		"remark",
+		"text editor",
+		"marked editor",
+		"slash",
+		"syntax highlighting",
+		"emoji",
+		"katex"
+	],
+	"files": [
+		"dist"
+	]
+}

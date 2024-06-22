@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------
+
+https://github.com/BearToCode/carta/pull/82
+https://github.com/warren-bank/fork-js-svelte-carta/tree/PR-005/v4.2.1/hide-preview-toolbar
+https://github.com/warren-bank/fork-js-svelte-carta/commits/PR-005/v4.2.1/hide-preview-toolbar/
+
+https://github.com/warren-bank/fork-js-svelte-carta/tree/6ca3764c885c2e902ac8de9a0f92629737d9974d
+https://github.com/warren-bank/fork-js-svelte-carta/archive/6ca3764c885c2e902ac8de9a0f92629737d9974d.zip
+
+--------------------------------------------------------------------------------

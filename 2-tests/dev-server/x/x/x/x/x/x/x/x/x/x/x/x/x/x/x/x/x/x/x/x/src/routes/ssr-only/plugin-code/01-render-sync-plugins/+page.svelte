@@ -10,7 +10,7 @@
     ]
   })
 
-  let value = "```js\nconsole.log('Hello, World!');\n```"
+  let value = "```js\n  console.log('Hello, World!');\n```"
 </script>
 
 <svelte:head>

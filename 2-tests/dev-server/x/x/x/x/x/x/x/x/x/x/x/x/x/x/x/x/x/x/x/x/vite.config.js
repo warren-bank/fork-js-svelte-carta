@@ -2,14 +2,21 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [sveltekit()],
-	/*
-	ssr: {
-		noExternal: [
-			'carta-md/**'
-		]
-	},
-	*/
+  plugins: [sveltekit()],
+
+  define: {
+    __ENABLE_CARTA_SSR_ASYNC_PLUGINS__ : 'true',
+    __ENABLE_CARTA_SSR_HIGHLIGHTER__   : 'true'
+  },
+
+  /*
+  ssr: {
+    noExternal: [
+      'carta-md/**'
+    ]
+  },
+  */
+
   server: {
     fs: {
       allow: [
@@ -37,7 +44,8 @@ export default defineConfig({
       ]
     }
   },
-	build: {
-		sourcemap: true
-	}
+
+  build: {
+    sourcemap: true
+  }
 });

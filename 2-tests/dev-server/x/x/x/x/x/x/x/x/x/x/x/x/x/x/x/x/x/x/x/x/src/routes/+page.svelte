@@ -23,9 +23,31 @@
 
 <h2><u>{title}</u></h2>
 
-{#each top_level_dirs as tld (tld.path)}
-  <h3>{tld.name}</h3>
-  <ul>
-    <li><a target="_blank" href={`/${tld.path}/plugin-code`}>plugin-code</a></li>
-  </ul>
-{/each}
+<h3>SSR (Server-Side Rendering) only</h3>
+<ul>
+  <li>plugin-code
+    <ul>
+      <li><a target="_blank" href="/ssr-only/plugin-code/01-render-sync-plugins">render sync plugins</a></li>
+      <li><a target="_blank" href="/ssr-only/plugin-code/02-render-async-plugins">render async plugins</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>CSR (Client-Side Rendering) only</h3>
+<ul>
+  <li>plugin-code
+    <ul>
+      <li><a target="_blank" href="/csr-only/plugin-code/01-editor">editor</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>SSR and CSR</h3>
+<ul>
+  <li>plugin-code
+    <ul>
+      <li><a target="_blank" href="/ssr-and-csr/plugin-code/01-editor">editor</a></li>
+      <li><a target="_blank" href="/ssr-and-csr/plugin-code/02-editor-with-form">editor with form</a></li>
+    </ul>
+  </li>
+</ul>
