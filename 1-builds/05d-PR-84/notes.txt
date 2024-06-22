@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------
+
+https://github.com/BearToCode/carta/pull/84
+https://github.com/warren-bank/fork-js-svelte-carta/tree/PR-006/v4.2.1/remove-shiki-from-server-bundle
+https://github.com/warren-bank/fork-js-svelte-carta/commits/PR-006/v4.2.1/remove-shiki-from-server-bundle/
+
+https://github.com/warren-bank/fork-js-svelte-carta/tree/1b9d94f5ff245917459ec7cbfdf976c7ea1d81d1
+https://github.com/warren-bank/fork-js-svelte-carta/archive/1b9d94f5ff245917459ec7cbfdf976c7ea1d81d1.zip
+
+--------------------------------------------------------------------------------
