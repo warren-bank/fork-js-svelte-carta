@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../dist/carta.css" />
+
+  <!-- Fira font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" />
+
+  <style>
+    .carta-font-code,
+    .carta-font-code * {
+      font-family: 'Fira Code', monospace !important;
+      font-variant-ligatures: normal !important;
+      font-size: 1.1rem !important;
+      line-height: 1.5rem !important;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+  </style>
+
+  <script type="module">
+    import CartaMd from '../dist/carta.min.mjs'
+
+    const init = (target) => {
+      const carta = new CartaMd.Carta({})
+
+      CartaMd.MarkdownEditor({
+        target,
+        carta,
+        context: []
+      })
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      init(
+        document.getElementById('root')
+      )
+    })
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>

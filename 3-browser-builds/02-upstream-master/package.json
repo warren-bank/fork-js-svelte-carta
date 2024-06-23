@@ -1,0 +1,8 @@
+{
+  "name": "browser-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  }
+}

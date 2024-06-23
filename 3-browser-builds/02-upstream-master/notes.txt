@@ -1,0 +1,4 @@
+file: 1-builds\02-upstream-master\packages\carta-md\dist\index.js
+line: 8
+code: export * from './default.css?inline';
+note: needs to be commented out, or removed
