@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="../packages/carta-md/dist/carta-md.css" />
-  <link rel="stylesheet" href="../packages/plugin-anchor/dist/plugin-anchor.css" />
-  <link rel="stylesheet" href="../packages/plugin-attachment/dist/plugin-attachment.css" />
-  <link rel="stylesheet" href="../packages/plugin-code/dist/plugin-code.css" />
+  <link rel="stylesheet" href="../dist/full/carta.css" />
 
   <!-- Fira font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,24 +21,19 @@
   </style>
 
   <script type="module">
-    import CartaMd           from '../packages/carta-md/dist/carta-md.min.mjs'
-    import plugin_anchor     from '../packages/plugin-anchor/dist/plugin-anchor.min.mjs'
-    import plugin_attachment from '../packages/plugin-attachment/dist/plugin-attachment.mjs'
-    import plugin_code       from '../packages/plugin-code/dist/plugin-code.min.mjs'
+    import CartaMd           from '../dist/full/carta-md.js'
+    import plugin_anchor     from '../dist/full/plugin-anchor.js'
+    import plugin_attachment from '../dist/full/plugin-attachment.js'
+    import plugin_code       from '../dist/full/plugin-code.js'
 
     const init = (target) => {
       const carta = new CartaMd.Carta({
         extensions: [
           plugin_anchor(),
-
-// throws error
-/*
           plugin_attachment({
             supportedMimeTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/svg+xml'],
             upload: async (file) => `https://beartocode.github.io/carta/${file.name}`
           }),
-*/
-
           plugin_code()
         ]
       })

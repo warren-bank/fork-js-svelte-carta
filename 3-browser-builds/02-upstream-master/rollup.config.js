@@ -68,138 +68,79 @@ const findReplaceOptions = [
   [/^\sset .+{$\n\s+this.+[^}]+}/gm, '']
 ].map(([find, replace]) => modify({ find, replace }))
 
+const packages = ['carta-md', 'plugin-anchor', 'plugin-attachment', 'plugin-code', 'plugin-emoji', 'plugin-math', 'plugin-slash', 'plugin-tikz']
+const input    = packages.map(pkg => `packages/${pkg}/src/${pkg}.js`)
+
+const genericConfigOptions = {
+  input,
+  plugins: [
+    commonjs(),
+    svelte({
+      preprocess: [cleanSvelteWhitespace],
+      compilerOptions: {
+        immutable: true,
+        css: false
+      }
+    }),
+    resolve({
+      browser: true,
+      dedupe: ['svelte']
+    }),
+    ...findReplaceOptions,
+    css({
+      output: 'carta.css'
+    })
+  ]
+}
+
+const genericConfigOptions_es = {
+  ...genericConfigOptions,
+  plugins: [
+    ...genericConfigOptions.plugins,
+    rollupImportMapPlugin({
+      imports: {
+        'shiki': 'https://esm.sh/shiki@1.9.0'
+      }
+    })
+  ]
+}
+
+const genericConfigOptions_non_es = {
+  ...genericConfigOptions,
+  external: [
+    'shiki'
+  ]
+}
+
 const config = []
 
-const get_path = (pkg, tail) => `packages/${pkg}/${tail}`
+// unminified dist files
 
-const packages = [
-  {pkg: 'carta-md',          name: 'CartaMd'},
-  {pkg: 'plugin-anchor',     name: 'CartaPluginAnchor'},
-  {pkg: 'plugin-attachment', name: 'CartaPluginAttachment'},
-  {pkg: 'plugin-code',       name: 'CartaPluginCode'},
-  {pkg: 'plugin-emoji',      name: 'CartaPluginEmoji'},
-  {pkg: 'plugin-math',       name: 'CartaPluginMath'},
-  {pkg: 'plugin-slash',      name: 'CartaPluginSlash'},
-  {pkg: 'plugin-tikz',       name: 'CartaPluginTikz'}
-]
+config.push({
+  ...genericConfigOptions_es,
+  output: [
+    {
+      format: 'es',
+      dir: 'dist/full'
+    }
+  ]
+})
 
-for (let {pkg, name} of packages) {
-  const genericConfigOptions = {
-    input: get_path(pkg, `src/${pkg}.js`),
-    plugins: [
-      commonjs(),
-      svelte({
-        preprocess: [cleanSvelteWhitespace],
-        compilerOptions: {
-          immutable: true,
-          css: false
-        }
-      }),
-      resolve({
-        browser: true,
-        dedupe: ['svelte']
-      }),
-      ...findReplaceOptions,
-      css({
-        output: `${pkg}.css`
-      })
-    ]
-  }
+// minified dist files
 
-  const genericConfigOptions_es = {
-    ...genericConfigOptions,
-    plugins: [
-      ...genericConfigOptions.plugins,
-      rollupImportMapPlugin({
-        imports: {
-          'shiki': 'https://esm.sh/shiki@1.9.0'
-        }
-      })
-    ]
-  }
-
-  const genericConfigOptions_non_es = {
-    ...genericConfigOptions,
-    external: [
-      'shiki'
-    ]
-  }
-
-  // unminified dist files
-
-  config.push({
-    ...genericConfigOptions_es,
-    output: [
-      {
-        format: 'es',
-        file: get_path(pkg, `dist/${pkg}.mjs`),
-        inlineDynamicImports: true
-      }
-    ]
-  })
-
-  config.push({
-    ...genericConfigOptions_non_es,
-    output: [
-      {
-        name,
-        format: 'cjs',
-        file: get_path(pkg, `dist/${pkg}.cjs`),
-        inlineDynamicImports: true,
-        strict: false,
-        exports: 'default'
-      },
-      {
-        name,
-        format: 'umd',
-        file: get_path(pkg, `dist/${pkg}.umd.js`),
-        inlineDynamicImports: true,
-        strict: false,
-        globals: {
-          shiki: 'shiki'
-        }
-      }
-    ]
-  })
-
-  // minified dist files
-
-  config.push({
-    ...genericConfigOptions_es,
-    plugins: [
-      ...genericConfigOptions_es.plugins,
-      terser(terserOptions),
-      size()
-    ],
-    output: [
-      {
-        format: 'es',
-        file: get_path(pkg, `dist/${pkg}.min.mjs`),
-        inlineDynamicImports: true
-      }
-    ]
-  })
-
-  config.push({
-    ...genericConfigOptions_non_es,
-    plugins: [
-      ...genericConfigOptions_non_es.plugins,
-      terser(terserOptions),
-      size()
-    ],
-    output: [
-      {
-        name,
-        format: 'iife',
-        file: get_path(pkg, `dist/${pkg}.min.js`),
-        inlineDynamicImports: true,
-        strict: false,
-        globals: {
-          shiki: 'shiki'
-        }
-      }
-    ]
-  })
-}
+config.push({
+  ...genericConfigOptions_es,
+  plugins: [
+    ...genericConfigOptions_es.plugins,
+    terser(terserOptions),
+    size()
+  ],
+  output: [
+    {
+      format: 'es',
+      dir: 'dist/min'
+    }
+  ]
+})
 
 export default config

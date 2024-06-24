@@ -1,3 +1,134 @@
+.carta-renderer code {
+	white-space: pre;
+	border-radius: 10px;
+	color: #112;
+	text-shadow: none;
+	/* line-height: 24px; */
+	box-sizing: border-box;
+}
+
+.carta-renderer code::selection,
+.carta-renderer code ::selection {
+	background: #bdf5;
+}
+
+.carta-renderer code > div {
+	display: inline-flex;
+	overflow: auto;
+	max-width: min(100%, 100vw);
+}
+
+.carta-renderer code > div :last-child {
+	flex: 1;
+	outline: none;
+}
+
+.carta-drop-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	--icon-color: #e9ebef;
+	--bg-color: #4c6de8;
+	--border-color: #ffffff88;
+}
+
+.carta-drop-overlay-container {
+	width: 16rem;
+	height: 10rem;
+	max-width: 90%;
+	max-height: 90%;
+	padding: 0.75rem;
+
+	background: var(--bg-color);
+	border-radius: 20px;
+}
+
+.carta-drop-overlay-content {
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+
+	border: 2px solid var(--border-color);
+	border-style: dashed;
+	border-radius: 12px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.carta-drop-overlay-content > .upload-icon {
+	width: 75%;
+	height: 75%;
+	color: var(--icon-color);
+}
+
+.carta-loading-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	align-items: center;
+}
+
+.carta-loading-overlay > span {
+	margin-left: 0.5rem;
+}
+
+.carta-loading-overlay > .spinner-icon {
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	position: relative;
+}
+
+.markdown-body h1 .icon.icon-link,
+.markdown-body h2 .icon.icon-link,
+.markdown-body h3 .icon.icon-link,
+.markdown-body h4 .icon.icon-link,
+.markdown-body h5 .icon.icon-link,
+.markdown-body h6 .icon.icon-link {
+	opacity: 0;
+	content: url('./link.svg');
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	padding-right: 4px;
+	transform: translateY(-50%);
+}
+
+.markdown-body h1:hover .icon.icon-link,
+.markdown-body h2:hover .icon.icon-link,
+.markdown-body h3:hover .icon.icon-link,
+.markdown-body h4:hover .icon.icon-link,
+.markdown-body h5:hover .icon.icon-link,
+.markdown-body h6:hover .icon.icon-link {
+	opacity: 1;
+}
+
 .carta-renderer.svelte-1oqga2r{position:relative;word-wrap:break-word;word-break:break-word}
 .carta-input.svelte-yfzyj5{position:relative}.carta-input-wrapper.svelte-yfzyj5{height:100%;position:relative;font-family:monospace}textarea.svelte-yfzyj5{position:relative;width:100%;max-width:100%;min-height:100%;overflow-y:hidden;resize:none;padding:0;margin:0;border:0;color:transparent;background:transparent;outline:none;tab-size:4}.carta-highlight.svelte-yfzyj5{position:absolute;left:0;right:0;top:0;bottom:0;margin:0;user-select:none;height:fit-content;padding:inherit;margin:inherit;word-wrap:break-word;white-space:pre-wrap;word-break:break-word}.carta-highlight .shiki{margin:0;tab-size:4;background-color:transparent !important}.carta-highlight *{font-family:inherit;font-size:inherit;word-wrap:break-word;white-space:pre-wrap;word-break:break-word}#editor-unfocus-suggestion.svelte-yfzyj5{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);border:0}
 .carta-toolbar.svelte-14g49jy{height:2rem;display:flex;flex-shrink:0;overflow-x:auto;overflow-y:hidden}.carta-toolbar-left.svelte-14g49jy{display:flex;align-items:center;flex-wrap:nowrap;height:100%}.carta-filler.svelte-14g49jy{flex:1}.carta-toolbar-right.svelte-14g49jy{height:100%;display:flex;align-items:center;justify-content:flex-end}.carta-icon.svelte-14g49jy{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;border-radius:3px;cursor:pointer;margin-left:4px}.carta-icon-full.svelte-14g49jy{display:flex;align-items:center;border-radius:3px;cursor:pointer}.carta-icons-menu.svelte-14g49jy{position:absolute;top:100%;right:0;display:flex;flex-direction:column;margin-right:0.5rem;z-index:1}
