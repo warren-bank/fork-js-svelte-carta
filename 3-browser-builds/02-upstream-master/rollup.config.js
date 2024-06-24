@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import terser from '@rollup/plugin-terser'
 import css from 'rollup-plugin-import-css'
 import {rollupImportMapPlugin} from 'rollup-plugin-import-map'
@@ -89,6 +90,9 @@ const genericConfigOptions = {
     ...findReplaceOptions,
     css({
       output: 'carta.css'
+    }),
+    json({
+      compact: true
     })
   ]
 }
@@ -99,7 +103,8 @@ const genericConfigOptions_es = {
     ...genericConfigOptions.plugins,
     rollupImportMapPlugin({
       imports: {
-        'shiki': 'https://esm.sh/shiki@1.9.0'
+        'shiki':        'https://esm.sh/shiki@1.9.0',
+        'node-tikzjax': 'https://tikzjax.com/v1/tikzjax.js'
       }
     })
   ]

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Carta Markdown Editor: Browser Build Demo</title>
+
   <link rel="stylesheet" href="../dist/full/carta.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
 
   <!-- Fira font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,19 +27,27 @@
 
   <script type="module">
     import CartaMd           from '../dist/full/carta-md.js'
+    import plugin_tikz       from '../dist/full/plugin-tikz.js'
+    import plugin_math       from '../dist/full/plugin-math.js'
+    import plugin_slash      from '../dist/full/plugin-slash.js'
+    import plugin_emoji      from '../dist/full/plugin-emoji.js'
+    import plugin_code       from '../dist/full/plugin-code.js'
     import plugin_anchor     from '../dist/full/plugin-anchor.js'
     import plugin_attachment from '../dist/full/plugin-attachment.js'
-    import plugin_code       from '../dist/full/plugin-code.js'
 
     const init = (target) => {
       const carta = new CartaMd.Carta({
         extensions: [
+          plugin_tikz(),
+          plugin_math(),
+          plugin_slash(),
+          plugin_emoji(),
+          plugin_code(),
           plugin_anchor(),
           plugin_attachment({
             supportedMimeTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/svg+xml'],
             upload: async (file) => `https://beartocode.github.io/carta/${file.name}`
-          }),
-          plugin_code()
+          })
         ]
       })
 

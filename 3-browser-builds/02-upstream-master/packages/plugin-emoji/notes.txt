@@ -1,0 +1,5 @@
+link: https://github.com/BearToCode/carta/blob/744c9a2a0d84aa4830ef8d2ff28a900ec4c5ce2c/packages/plugin-emoji/src/lib/index.ts#L6
+file: 1-builds/02-upstream-master/packages/plugin-emoji/dist/index.js
+line: 5
+code: export * from './default.css?inline';
+note: needs to be commented out, or removed
