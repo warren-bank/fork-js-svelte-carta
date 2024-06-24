@@ -69,7 +69,7 @@ const findReplaceOptions = [
 ].map(([find, replace]) => modify({ find, replace }))
 
 const genericConfigOptions = {
-  input: 'carta-md-deps/carta-md/carta.js',
+  input: 'src/carta.js',
   plugins: [
     commonjs(),
     svelte({

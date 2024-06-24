@@ -1,0 +1,5 @@
+link: https://github.com/BearToCode/carta/blob/744c9a2a0d84aa4830ef8d2ff28a900ec4c5ce2c/packages/plugin-anchor/src/lib/index.ts#L4
+file: 1-builds/02-upstream-master/packages/plugin-anchor/dist/index.js
+line: 3
+code: export * from './default.css?inline';
+note: needs to be commented out, or removed
