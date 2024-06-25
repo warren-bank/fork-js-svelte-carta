@@ -44,6 +44,7 @@
 
 <h3>SSR and CSR</h3>
 <ul>
+  <li><a target="_blank" href="/ssr-and-csr/all-plugins">all plugins</a></li>
   <li>plugin-code
     <ul>
       <li><a target="_blank" href="/ssr-and-csr/plugin-code/01-editor">editor</a></li>
