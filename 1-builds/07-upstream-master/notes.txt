@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------------
+
+https://github.com/BearToCode/carta/commits/master/
+https://github.com/BearToCode/carta/commit/088274f7b3eae81c78d7623dc6a764b241089eb1
+https://github.com/BearToCode/carta/archive/088274f7b3eae81c78d7623dc6a764b241089eb1.zip
+
+even with release:
+https://github.com/BearToCode/carta/releases
+https://github.com/BearToCode/carta/releases/tag/%40cartamd%2Fplugin-tikz-v4.1.6
+https://github.com/BearToCode/carta/archive/refs/tags/@cartamd/plugin-tikz-v4.1.6.zip
+
+--------------------------------------------------------------------------------
+
+to replace pnpm workspace in "package.json" of plugins:
+
+search  = "workspace:*"
+replace = "../carta-md"
+
+--------------------------------------------------------------------------------
