@@ -13,3 +13,5 @@ set build_dir=05c-PR-84
 set build_dir=05d-PR-84
 set build_dir=06a-PR-87
 set build_dir=07-upstream-master
+set build_dir=08a-PR-92
+set build_dir=09a-PR-93
