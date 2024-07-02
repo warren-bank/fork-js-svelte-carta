@@ -23,6 +23,9 @@ onDestroy(() => {
   carta.input?.textarea.removeEventListener("blur", hideAfterDelay);
 });
 function hideAfterDelay() {
+  const el = document.activeElement;
+  const ignoreBlur = el && el.tagName === "TEXTAREA" && el.id === "md";
+  if (ignoreBlur) return;
   setTimeout(hide, 250);
 }
 function hide() {
@@ -61,22 +64,33 @@ function handleKeyDown(e) {
 }
 function handleKeyInput(e) {
   if (!carta.input) return;
-  if (e.inputType !== "insertText" || !e.data || e.data.length !== 1) return;
-  if (!visible && e.data === ":") {
-    visible = true;
-    colonPosition = carta.input.textarea.selectionStart;
-    filter = "";
-    return;
+  if (e.inputType === "insertText" && e.data === ":") {
+    if (!visible) {
+      visible = true;
+      colonPosition = carta.input.textarea.selectionStart - 1;
+      filter = "";
+      return;
+    } else {
+      visible = false;
+      return;
+    }
   }
   if (!visible) return;
-  if (carta.input.textarea.selectionStart < colonPosition || e.data === " ") {
+  if (carta.input.textarea.selectionStart < colonPosition) {
     visible = false;
-  } else {
+    return;
+  }
+  if (e.inputType === "insertText" || e.inputType === "insertCompositionText" || e.inputType === "deleteContentBackward") {
     filter = carta.input.textarea.value.slice(
       colonPosition + 1,
       carta.input.textarea.selectionStart
     );
-    emojis = nodeEmoji.search(filter).slice(0, maxResults);
+    const last_char = filter.length ? filter[filter.length - 1] : "";
+    if (last_char === " ") {
+      visible = false;
+      return;
+    }
+    emojis = filter.length ? nodeEmoji.search(filter).slice(0, maxResults) : [];
     hoveringIndex = 0;
   }
 }
